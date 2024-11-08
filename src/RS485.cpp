@@ -1,4 +1,4 @@
-/*
+P/*
   This file is part of the ArduinoRS485 library.
   Copyright (c) 2018 Arduino SA. All rights reserved.
 
@@ -203,8 +203,13 @@ void RS485Class::setDelays(int predelay, int postdelay)
   _postdelay = postdelay;
 }
 
+#define SERIAL_PORT_HARDWARE 
+ 
 #ifdef RS485_SERIAL_PORT
 RS485Class RS485(RS485_SERIAL_PORT, RS485_DEFAULT_TX_PIN, RS485_DEFAULT_DE_PIN, RS485_DEFAULT_RE_PIN);
 #else
-RS485Class RS485(SERIAL_PORT_HARDWARE, RS485_DEFAULT_TX_PIN, RS485_DEFAULT_DE_PIN, RS485_DEFAULT_RE_PIN);
+//RS485Class RS485(SERIAL_PORT_HARDWARE, RS485_DEFAULT_TX_PIN, RS485_DEFAULT_DE_PIN, RS485_DEFAULT_RE_PIN);
+RS485Class RS485(Serial1, 32, 12, -1);//m100 board gpio12 control tx enable.
 #endif
+ 
+

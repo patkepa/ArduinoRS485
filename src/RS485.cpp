@@ -1,4 +1,4 @@
-P/*
+/*
   This file is part of the ArduinoRS485 library.
   Copyright (c) 2018 Arduino SA. All rights reserved.
 
